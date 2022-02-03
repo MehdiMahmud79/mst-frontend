@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
+import ReactCountryFlag from "react-country-flag";
 
 import "./App.css";
 // link to the socet.io server
@@ -21,6 +22,17 @@ function App() {
       <h1 className="text-red-800 text-center text-3xl font-bold p-4">
         MST Golf tournoment App
       </h1>
+
+      <ReactCountryFlag
+        countryCode="DE"
+        svg
+        style={{
+          width: "2em",
+          height: "2em",
+        }}
+        title="USA"
+      />
+
       {results ? <p> {JSON.stringify(results)}</p> : "Loading..."}
     </>
   );
