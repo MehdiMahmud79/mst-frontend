@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import ReactCountryFlag from "react-country-flag";
-
+import { flags } from "./flags";
 import "./App.css";
 // link to the socet.io server
 const endPoint = "https://mst-full-stack-dev-test.herokuapp.com/";
 function App() {
   const [results, setResults] = useState(null);
   const socket = socketIOClient(endPoint);
-  const testt = "H�jgaard";
+  const [flag, setFlag] = useState(flags[0]);
+
   // this will take effect every 10 seconds as the server send new data
   useEffect(() => {
     socket.on("data-update", (data) => {
       console.log(data);
       setResults(data);
+      setFlag();
+      console.log(data.Nationality);
     });
   }, []);
 
