@@ -18,7 +18,9 @@ function App() {
 
   return (
     <>
-      <h1>MST Golf tournoment App</h1>
+      <h1 className="text-red-800 text-center text-3xl font-bold p-4">
+        MST Golf tournoment App
+      </h1>
       {results ? <p> {JSON.stringify(results)}</p> : "Loading..."}
     </>
   );
