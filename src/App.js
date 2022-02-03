@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 
 import "./App.css";
+// link to the socet.io server
 const endPoint = "https://mst-full-stack-dev-test.herokuapp.com/";
-
 function App() {
-  const [results, setResults] = useState("loading");
+  const [results, setResults] = useState(null);
   const socket = socketIOClient(endPoint);
+  const testt = "H�jgaard";
+  // this will take effect every 10 seconds as the server send new data
   useEffect(() => {
     socket.on("data-update", (data) => {
       console.log(data);
@@ -17,7 +19,7 @@ function App() {
   return (
     <>
       <h1>MST Golf tournoment App</h1>
-      <p> {JSON.stringify(results)}</p>;
+      {results ? <p> {JSON.stringify(results)}</p> : "Loading..."}
     </>
   );
 }
