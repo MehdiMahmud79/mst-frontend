@@ -25,9 +25,9 @@ function App() {
   console.log("resul", results);
 
   return (
-    <>
+    <div className="bg-red-200 ">
       <h1 className="text-red-800 text-center text-3xl font-bold p-4">
-        MST Golf tournoment App
+        MST Golf Tournoment App
       </h1>
 
       {results ? (
@@ -35,7 +35,7 @@ function App() {
       ) : (
         <Loader />
       )}
-    </>
+    </div>
   );
 }
 
