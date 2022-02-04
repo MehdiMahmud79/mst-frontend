@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 import Loader from "./Loader";
 
-const TableCard = ({ players }) => {
-  console.log("Table cards", players);
+const TableCard = ({ player }) => {
+  console.log("TableCard", player);
+  const [players, setPlayers] = useState([]);
+
+  useEffect(() => {
+    // console.log("updated results", players);
+
+    let newPlayer = {};
+    if (player.MSTID) {
+      newPlayer["MSTID"] = player.MSTID;
+      newPlayer["DATA"] = player;
+      let check = false;
+      if (players.length > 0) {
+        players.forEach((elem) => {
+          if (elem["MSTID"] === player.MSTID) {
+            elem["MSTID"] = newPlayer;
+            check = true;
+          }
+        });
+      }
+
+      if (!check) setPlayers((players) => [...players, newPlayer]);
+    }
+
+    console.log("players", players);
+  }, [player]);
   return (
     <div>
       {players.length == 0 ? (

@@ -235,6 +235,7 @@ export const flags = {
   TUR: "TR",
   TKM: "TM",
   TCA: "TC",
+  SCO: "GB",
   TUV: "TV",
   UGA: "UG",
   UKR: "UA",

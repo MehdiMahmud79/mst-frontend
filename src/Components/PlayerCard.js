@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from "react";
 
 import ReactCountryFlag from "react-country-flag";
-import { flags } from "../utils/flags";
+import { flags } from "./utils/flags";
+import parse from "html-react-parser";
 
 const PlayerCard = ({ player }) => {
+  const parse = require("html-react-parser");
+  //   console.log("inside card", player);
+
   const [flag, setFlag] = useState(null);
-  console.log("inside card", player);
   useEffect(() => {
     setFlag(flags[player.Nationality]);
   }, []);
   return (
     <tr>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td className="px-5 py-5 border-b border-gray-200 bg-gray-200 text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
           {player.CalculatedRankInteger}
         </p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td className="px-5 py-5 border-b border-gray-200 bg-gray-100 text-sm">
         <span>
           {" "}
           {flag ? (
@@ -26,12 +29,12 @@ const PlayerCard = ({ player }) => {
                 countryCode={flag}
                 svg
                 style={{
-                  width: "2em",
+                  width: "3em",
                   height: "2em",
                 }}
                 title={player.Nationality}
               />
-              <span>{player.TVName}</span>{" "}
+              <span>{parse(player.TVName)}</span>{" "}
             </h1>
           ) : (
             <h1 className=" m-2 ">
@@ -42,7 +45,6 @@ const PlayerCard = ({ player }) => {
             </h1>
           )}
         </span>
-        <p className="text-gray-900 whitespace-no-wrap"></p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
@@ -76,9 +78,7 @@ const PlayerCard = ({ player }) => {
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
-          <p className="text-gray-900 whitespace-no-wrap">
-            {player.Today ? player.Today : ""}
-          </p>
+          {player.Today ? player.Today : ""}
         </p>
       </td>
     </tr>
