@@ -83,6 +83,7 @@ export const flags = {
   GMB: "GM",
   GEO: "GE",
   DEU: "DE",
+  GER: "DE",
   GHA: "GH",
   GIB: "GI",
   GRC: "GR",
@@ -235,6 +236,8 @@ export const flags = {
   UKR: "UA",
   ARE: "AE",
   GBR: "GB",
+  ENG: "GB",
+
   UMI: "UM",
   USA: "US",
   URY: "UY",
