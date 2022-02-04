@@ -1,62 +1,87 @@
-import React from "react";
-import ReactCountryFlag from "react-country-flag";
+import React, { useState, useEffect } from "react";
 
-const PlayerCard = ({ player, flag, title }) => {
+import ReactCountryFlag from "react-country-flag";
+import { flags } from "../utils/flags";
+
+const PlayerCard = ({ player }) => {
+  const [flag, setFlag] = useState(null);
+  console.log("inside card", player);
+  useEffect(() => {
+    setFlag(flags[player.Nationality]);
+  }, []);
   return (
-    <div>
-      <div className="flex flex-wrap justify-around m-4">
-        <div className="px-6 py-4 bg-gray-200 m-2 rounded-2xl shadow-xl">
+    <tr>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {player.CalculatedRankInteger}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <span>
+          {" "}
           {flag ? (
-            <ReactCountryFlag
-              className="mx-2"
-              countryCode={flag}
-              svg
-              style={{
-                width: "4em",
-                height: "4em",
-              }}
-              title={title}
-            />
+            <h1>
+              <ReactCountryFlag
+                className="mx-2"
+                countryCode={flag}
+                svg
+                style={{
+                  width: "2em",
+                  height: "2em",
+                }}
+                title={player.Nationality}
+              />
+              <span>{player.TVName}</span>{" "}
+            </h1>
           ) : (
-            <h1 className="text-4xl m-2">
-              <i className="fab fa-font-awesome-flag text-4xl text-gray-500"></i>{" "}
-              : {player.Nationality}
+            <h1 className=" m-2 ">
+              <span className="text-sm px-2 py-1 bg-yellow-300">
+                {player.Nationality}
+              </span>{" "}
+              {player.TVName}
             </h1>
           )}
-          <h1 className="font-bold text-gray-900 text-md  my-2">
-            <i className="fas fa-id-card-alt text-gray-500"> </i> MST ID{" "}
-            {player.MSTID}
-          </h1>
-          <h1 className="font-bold text-gray-900 text-md  my-2">
-            <i className="fas fa-user  text-gray-500 "> </i> Name:{" "}
-            {player.First} {"  "} {player.Last}
-          </h1>
-          <h1 className="font-bold text-gray-900 text-md  my-2">
-            Sex: {player.Sex}
-          </h1>
-          <h2 className="font-bold text-gray-900 text-md my-2">
-            Rank: {player.CalculatedRankInteger}
-          </h2>
-        </div>
-        <div className="px-6 py-4 bg-gray-200 m-2 rounded-2xl shadow-xl ">
-          <h1 className="font-bold text-gray-900 text-md  my-2">
-            Name on Tv: {player.TVName}
-          </h1>{" "}
-          <h1 className="font-bold text-gray-900 text-md  my-2">
-            Position: {player.position}
-          </h1>
-          <h1 className="font-bold text-gray-900 text-md  my-2">
-            Tournament ID: {player.tournamentID}
-          </h1>
-          <h1 className="font-bold text-gray-900 text-md  my-2">
-            MatchID: {player.matchID}
-          </h1>
-          <h2 className="font-bold text-gray-900 text-md my-2">
-            Match: {player.Match}
-          </h2>
-        </div>
-      </div>
-    </div>
+        </span>
+        <p className="text-gray-900 whitespace-no-wrap"></p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {player.Score ? player.Score : ""}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {player.Today ? player.Today : ""}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {player.Today ? player.Today : ""}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {player.Today ? player.Today : ""}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {player.Today ? player.Today : ""}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {player.Today ? player.Today : ""}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          <p className="text-gray-900 whitespace-no-wrap">
+            {player.Today ? player.Today : ""}
+          </p>
+        </p>
+      </td>
+    </tr>
   );
 };
 
