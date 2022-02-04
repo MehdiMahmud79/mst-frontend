@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
-import { flags } from "./flags";
+import { flags } from "./utils/flags";
 import PlayerCard from "./Components/PlayerCard";
 import Loader from "./Components/Loader";
 
