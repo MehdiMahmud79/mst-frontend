@@ -4,13 +4,6 @@ import ReactCountryFlag from "react-country-flag";
 const PlayerCard = ({ player, flag, title }) => {
   return (
     <div>
-      <div className="bg-green-300 m-4 p-3 rounded-xl">
-        <h1 className="text-center text-4xl text-md font-bold m-2">
-          {" "}
-          <i class="fas fa-tv text-red-500"></i> {player.TVName}
-        </h1>
-      </div>
-
       <div className="flex flex-wrap justify-around m-4">
         <div className="px-6 py-4 bg-gray-200 m-2 rounded-2xl shadow-xl">
           {flag ? (
@@ -46,6 +39,9 @@ const PlayerCard = ({ player, flag, title }) => {
           </h2>
         </div>
         <div className="px-6 py-4 bg-gray-200 m-2 rounded-2xl shadow-xl ">
+          <h1 className="font-bold text-gray-900 text-md  my-2">
+            Name on Tv: {player.TVName}
+          </h1>{" "}
           <h1 className="font-bold text-gray-900 text-md  my-2">
             Position: {player.position}
           </h1>
