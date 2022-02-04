@@ -5,7 +5,10 @@ import Loader from "./Loader";
 const TableCard = ({ player }) => {
   console.log("TableCard", player);
   const [players, setPlayers] = useState([]);
-
+  function sort(a, b) {
+    console.log(a);
+    return a?.DATA.Score - b?.DATA.Score;
+  }
   useEffect(() => {
     // console.log("updated results", players);
 
@@ -13,17 +16,17 @@ const TableCard = ({ player }) => {
     if (player.MSTID) {
       newPlayer["MSTID"] = player.MSTID;
       newPlayer["DATA"] = player;
-      let check = false;
       if (players.length > 0) {
         players.forEach((elem) => {
           if (elem["MSTID"] === player.MSTID) {
             elem["MSTID"] = newPlayer;
-            check = true;
+            return;
           }
         });
       }
+      // if (players.length > 1) setPlayers((players) => sort(players));
 
-      if (!check) setPlayers((players) => [...players, newPlayer]);
+      setPlayers((players) => [...players, newPlayer]);
     }
 
     console.log("players", players);
@@ -47,10 +50,10 @@ const TableCard = ({ player }) => {
                         Player
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Score
+                        Par
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Holes Playes
+                        Thru
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                         Today

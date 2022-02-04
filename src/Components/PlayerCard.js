@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import ReactCountryFlag from "react-country-flag";
-import { flags } from "./utils/flags";
+import { flags } from "../utils/flags";
 import parse from "html-react-parser";
 
 const PlayerCard = ({ player }) => {
-  const parse = require("html-react-parser");
   //   console.log("inside card", player);
 
   const [flag, setFlag] = useState(null);
@@ -53,7 +52,7 @@ const PlayerCard = ({ player }) => {
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
-          {player.Today ? player.Today : ""}
+          {player.holesPlayed ? player.holesPlayed : ""}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -63,22 +62,22 @@ const PlayerCard = ({ player }) => {
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
-          {player.Today ? player.Today : ""}
+          {player.round == 1 ? player.TotalStrokes : ""}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
-          {player.Today ? player.Today : ""}
+          {player.round == 2 ? player.TotalStrokes : ""}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
-          {player.Today ? player.Today : ""}
+          {player.round == 3 ? player.TotalStrokes : ""}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap">
-          {player.Today ? player.Today : ""}
+          {player.round == 4 ? player.TotalStrokes : ""}
         </p>
       </td>
     </tr>
