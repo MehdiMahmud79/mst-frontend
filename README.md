@@ -13,6 +13,6 @@ This is a mini project to demonstrate the basic integration of some real-time da
 
 
 ## Links
-- the URL to Live : https://mehdimahmud79.github.io/mst-frontend/
 
+- the URL to Live : https://mehdimahmud79.github.io/mst-frontend/
 - the URL to the Github repository: https://github.com/MehdiMahmud79/mst-frontend
