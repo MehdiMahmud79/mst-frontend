@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import ReactCountryFlag from "react-country-flag";
 import { flags } from "../utils/flags";
 import parse from "html-react-parser";
 
 const PlayerCard = ({ player }) => {
-  //   console.log("inside card", player);
+  // to check and give sign and style to PAr
+  let textStyle = "text-gray-900";
+  let par = 71 - player.TotalStrokes;
+  if (par > 0) {
+    par = `+ ${par}`;
+  } else {
+    par = `- ${player.TotalStrokes - 71}`;
+    textStyle = "text-red-800";
+  }
 
-  const [flag, setFlag] = useState(null);
-  useEffect(() => {
-    setFlag(flags[player.Nationality]);
-  }, []);
   return (
     <tr>
-      <td className="px-5 py-5 border-b border-gray-200 bg-gray-200 text-sm">
+      <td className="px-5 py-5 border-b border-gray-200 bg-gray-200 text-sm text-center">
         <p className="text-gray-900 whitespace-no-wrap">
           {player.CalculatedRankInteger}
         </p>
@@ -21,11 +25,11 @@ const PlayerCard = ({ player }) => {
       <td className="px-5 py-5 border-b border-gray-200 bg-gray-100 text-sm">
         <span>
           {" "}
-          {flag ? (
+          {flags[player.Nationality] ? (
             <h1>
               <ReactCountryFlag
                 className="mx-2"
-                countryCode={flag}
+                countryCode={flags[player.Nationality]}
                 svg
                 style={{
                   width: "3em",
@@ -37,7 +41,7 @@ const PlayerCard = ({ player }) => {
             </h1>
           ) : (
             <h1 className=" m-2 ">
-              <span className="text-sm px-2 py-1 bg-yellow-300">
+              <span className="text-sm px-2 py-1 bg-yellow-300 ">
                 {player.Nationality}
               </span>{" "}
               {player.TVName}
@@ -46,38 +50,43 @@ const PlayerCard = ({ player }) => {
         </span>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap">
-          {player.Score ? player.Score : ""}
+        <p className={`${textStyle}  whitespace-no-wrap text-center font-bold`}>
+          {par ? par : "__"}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap">
-          {player.holesPlayed ? player.holesPlayed : ""}
+        <p className="text-gray-900 whitespace-no-wrap text-center">
+          {player.holesPlayed ? player.holesPlayed : "__"}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap">
-          {player.Today ? player.Today : ""}
+        <p className="text-gray-900 whitespace-no-wrap text-center">
+          {player.Today ? player.Today : "__"}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap">
-          {player.round == 1 ? player.TotalStrokes : ""}
+        <p className="text-gray-900 whitespace-no-wrap text-center">
+          {player.round ? player.TotalStrokes : "__"}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap">
-          {player.round == 2 ? player.TotalStrokes : ""}
+        <p className="text-gray-900 whitespace-no-wrap text-center">
+          {player.position ? player.position : "__"}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap">
-          {player.round == 3 ? player.TotalStrokes : ""}
+        <p className="text-gray-900 whitespace-no-wrap text-center">
+          {player.Score ? player.Score : "__"}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap">
-          {player.round == 4 ? player.TotalStrokes : ""}
+        <p className="text-gray-900 whitespace-no-wrap text-center">
+          {player.course ? player.course : "__"}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap text-center">
+          {player.TotalStrokes ? player.TotalStrokes : "__"}
         </p>
       </td>
     </tr>
