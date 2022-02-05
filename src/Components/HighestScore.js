@@ -6,6 +6,9 @@ const HighestScore = ({ highestScore }) => {
   return (
     <div className="bg-blue-600 p-2 text-blue-100 rounded-t-xl">
       <h1>
+        <span className="bg-red-600 w-fit p-1 px-3 rounded-r-xl -top-5 -left-2 shadow-xl relative">
+          Highest Score
+        </span>
         <span className="font-bold text-gray-100 p-2">
           {flags[highestScore.Nationality] ? (
             <span>
@@ -27,7 +30,7 @@ const HighestScore = ({ highestScore }) => {
               </span>{" "}
             </h1>
           )}
-          {highestScore.TVName} , Hihest Score: :
+          {highestScore.TVName} , Score: :
           <span className="font-bold text-yellow-400 p-2">
             {highestScore.Score}
           </span>
