@@ -21,8 +21,8 @@ const Flag = ({ player }) => {
           <span>{player.TVName}</span>{" "}
         </h1>
       ) : (
-        <h1 className=" m-2 ">
-          <span className="text-sm px-2 py-1 bg-yellow-300 ">
+        <h1>
+          <span className="text-sm px-2 py-1 bg-yellow-400 rounded-full ">
             {player.Nationality}
           </span>{" "}
           {player.TVName}
