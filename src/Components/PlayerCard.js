@@ -1,7 +1,6 @@
 import React from "react";
+import Flag from "./Flag";
 
-import ReactCountryFlag from "react-country-flag";
-import { flags } from "../utils/flags";
 const PlayerCard = ({ player, index }) => {
   // to check and give sign and style to Par and the first row
   let textStyle = "text-gray-900";
@@ -36,31 +35,7 @@ const PlayerCard = ({ player, index }) => {
         </p>
       </td>
       <td className={rowStyle}>
-        <span>
-          {" "}
-          {flags[player.Nationality] ? (
-            <h1>
-              <ReactCountryFlag
-                className="mx-2 rounded-full"
-                countryCode={flags[player.Nationality]}
-                svg
-                style={{
-                  width: "3em",
-                  height: "2em",
-                }}
-                title={player.Nationality}
-              />
-              <span>{player.TVName}</span>{" "}
-            </h1>
-          ) : (
-            <h1 className=" m-2 ">
-              <span className="text-sm px-2 py-1 bg-yellow-300 ">
-                {player.Nationality}
-              </span>{" "}
-              {player.TVName}
-            </h1>
-          )}
-        </span>
+        <Flag player={player} />
       </td>
       <td className={rowStyle}>
         <p className={`${textStyle}  whitespace-no-wrap text-center font-bold`}>
