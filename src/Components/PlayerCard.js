@@ -2,8 +2,6 @@ import React from "react";
 
 import ReactCountryFlag from "react-country-flag";
 import { flags } from "../utils/flags";
-import parse from "html-react-parser";
-
 const PlayerCard = ({ player, index }) => {
   // to check and give sign and style to Par and the first row
   let textStyle = "text-gray-900";
