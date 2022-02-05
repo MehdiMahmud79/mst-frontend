@@ -1,7 +1,11 @@
 # mst-frontend
 This is a mini project to demonstrate the basic integration of some real-time data from r a Golf tournament with potentially hundreds of players into a  React  application.
 
+## Mock-Up
 
+The following animation show a mock-up of the app and functionality:
+
+![📸 A gif animation of the app](./assets/screen.gif)
 
 ## Technologies
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
