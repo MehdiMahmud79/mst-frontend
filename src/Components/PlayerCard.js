@@ -4,31 +4,46 @@ import ReactCountryFlag from "react-country-flag";
 import { flags } from "../utils/flags";
 import parse from "html-react-parser";
 
-const PlayerCard = ({ player }) => {
-  // to check and give sign and style to PAr
+const PlayerCard = ({ player, index }) => {
+  // to check and give sign and style to Par and the first row
   let textStyle = "text-gray-900";
+  let rowStyle = "px-5 py-5 border-b border-gray-200 bg-gray-200 text-sm";
+  if (index == 0)
+    rowStyle = "px-5 py-5 border-b border-gray-200 bg-green-400 text-sm";
+  let pStyle = "text-gray-900 whitespace-no-wrap text-center";
   let par = 71 - player.TotalStrokes;
   if (par > 0) {
     par = `+ ${par}`;
-  } else {
+  } else if (par < 0) {
     par = `- ${player.TotalStrokes - 71}`;
     textStyle = "text-red-800";
+  } else {
+    par = 0;
+    textStyle = "text-gray-800";
   }
 
   return (
     <tr>
-      <td className="px-5 py-5 border-b border-gray-200 bg-gray-200 text-sm text-center">
-        <p className="text-gray-900 whitespace-no-wrap">
+      <td className={rowStyle}>
+        <p className={pStyle}>
+          {index === 0 ? (
+            <span>
+              <i className="fas fa-angle-double-right text-md  text-red-600"></i>{" "}
+            </span>
+          ) : (
+            ""
+          )}
+          {"  "}
           {player.CalculatedRankInteger}
         </p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-gray-100 text-sm">
+      <td className={rowStyle}>
         <span>
           {" "}
           {flags[player.Nationality] ? (
             <h1>
               <ReactCountryFlag
-                className="mx-2"
+                className="mx-2 rounded-full"
                 countryCode={flags[player.Nationality]}
                 svg
                 style={{
@@ -37,7 +52,7 @@ const PlayerCard = ({ player }) => {
                 }}
                 title={player.Nationality}
               />
-              <span>{parse(player.TVName)}</span>{" "}
+              <span>{player.TVName}</span>{" "}
             </h1>
           ) : (
             <h1 className=" m-2 ">
@@ -49,43 +64,33 @@ const PlayerCard = ({ player }) => {
           )}
         </span>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td className={rowStyle}>
         <p className={`${textStyle}  whitespace-no-wrap text-center font-bold`}>
           {par ? par : "__"}
         </p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap text-center">
+      <td className={rowStyle}>
+        <p className={pStyle}>
           {player.holesPlayed ? player.holesPlayed : "__"}
         </p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap text-center">
-          {player.Today ? player.Today : "__"}
-        </p>
+      <td className={rowStyle}>
+        <p className={pStyle}>{player.Today ? player.Today : "__"}</p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap text-center">
-          {player.round ? player.TotalStrokes : "__"}
-        </p>
+      <td className={rowStyle}>
+        <p className={pStyle}>{player.round ? player.round : "__"}</p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap text-center">
-          {player.position ? player.position : "__"}
-        </p>
+      <td className={rowStyle}>
+        <p className={pStyle}>{player.position ? player.position : "__"}</p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap text-center">
-          {player.Score ? player.Score : "__"}
-        </p>
+      <td className={rowStyle}>
+        <p className={pStyle}>{player.Score ? player.Score : "__"}</p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap text-center">
-          {player.course ? player.course : "__"}
-        </p>
+      <td className={rowStyle}>
+        <p className={pStyle}>{player.course ? player.course : "__"}</p>
       </td>
-      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 whitespace-no-wrap text-center">
+      <td className={rowStyle}>
+        <p className={pStyle}>
           {player.TotalStrokes ? player.TotalStrokes : "__"}
         </p>
       </td>
