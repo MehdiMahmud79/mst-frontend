@@ -27,7 +27,6 @@ const TableCard = ({ player }) => {
         {highestScore ? (
           <div className="bg-blue-600 p-2 text-blue-100">
             <h1>
-              Hihest Score:{" "}
               <span className="font-bold text-gray-100 p-2">
                 {flags[highestScore.Nationality] ? (
                   <span>
@@ -49,7 +48,7 @@ const TableCard = ({ player }) => {
                     </span>{" "}
                   </h1>
                 )}
-                {highestScore.TVName} :
+                {highestScore.TVName} , Hihest Score: :
                 <span className="font-bold text-yellow-400 p-2">
                   {highestScore.Score}
                 </span>
