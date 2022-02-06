@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 import HighestScore from "./HighestScore";
-
+import "./tableCard.css";
 const TableCard = ({ player }) => {
   const [players, setPlayers] = useState([]);
   const [sortedPlayers, setSortedPlayers] = useState([]);
@@ -31,36 +31,16 @@ const TableCard = ({ player }) => {
               <table className="min-w-full leading-normal  ">
                 <thead>
                   <tr>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Rank
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Player
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Par
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Thru
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Today
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Round
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      position
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Score
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      course
-                    </th>
-                    <th className="px-5 py-3 border-2 border-gray-300 bg-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider ">
-                      Total Strokes
-                    </th>
+                    <th className="tableHeader">Rank</th>
+                    <th className="tableHeader">Player</th>
+                    <th className="tableHeader">Par</th>
+                    <th className="tableHeader">Thru</th>
+                    <th className="tableHeader">Today</th>
+                    <th className="tableHeader">Round</th>
+                    <th className="tableHeader">position</th>
+                    <th className="tableHeader">Score</th>
+                    <th className="tableHeader">course</th>
+                    <th className="tableHeader">Total Strokes</th>
                   </tr>
                 </thead>
                 <tbody>

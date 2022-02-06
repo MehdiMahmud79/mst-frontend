@@ -1,7 +1,6 @@
 import React from "react";
-import { flags } from "../utils/flags";
-import ReactCountryFlag from "react-country-flag";
 import Flag from "./Flag";
+import "./highScore.css";
 const HighestScore = ({ highestScore }) => {
   return (
     <div className="bg-blue-600 p-2 text-blue-100 rounded-t-xl">
@@ -12,22 +11,16 @@ const HighestScore = ({ highestScore }) => {
         <div className="font-bold flex  text-gray-100 p-2">
           <Flag player={highestScore} />
           <div>
-            <span className="font-bold text-gray-900 mx-2">|</span>Score:{" "}
-            <span className="font-bold text-yellow-400 mx-2">
-              {highestScore.Score}
-            </span>{" "}
-            <span className="font-bold text-gray-900 mx-2">|</span> Rank:{" "}
-            <span className="font-bold text-yellow-400 mx-2">
+            <span className="titles">|</span>Score:{" "}
+            <span className="results">{highestScore.Score}</span>{" "}
+            <span className="titles">|</span> Rank:{" "}
+            <span className="results">
               {highestScore.CalculatedRankInteger}
             </span>{" "}
-            <span className="font-bold text-gray-900 mx-2">|</span> InStrokes:{" "}
-            <span className="font-bold text-yellow-400 mx-2">
-              {highestScore.InStrokes}
-            </span>
-            <span className="font-bold text-gray-900 mx-2">|</span> Match:{" "}
-            <span className="font-bold text-yellow-400 mx-2">
-              {highestScore.Match}
-            </span>
+            <span className="titles">|</span> InStrokes:{" "}
+            <span className="results">{highestScore.InStrokes}</span>
+            <span className="titles">|</span> Match:{" "}
+            <span className="results">{highestScore.Match}</span>
           </div>
         </div>
       </div>

@@ -1,0 +1,6 @@
+.titles{
+    @apply font-bold text-gray-900 mx-2;
+}
+.results{
+    @apply font-bold text-yellow-400 mx-2;
+}
