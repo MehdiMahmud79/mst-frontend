@@ -16,7 +16,7 @@ const PlayerCard = ({ player, index }) => {
     textStyle = "text-red-800";
   } else {
     par = "even";
-    textStyle = "text-gray-800";
+    textStyle = "text-yellow-700";
   }
 
   return (
