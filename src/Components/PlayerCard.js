@@ -12,7 +12,7 @@ const PlayerCard = ({ player, index }) => {
   if (par > 0) {
     par = `+ ${par}`;
   } else if (par < 0) {
-    par = `- ${player.TotalStrokes - 71}`;
+    par = `${player.TotalStrokes - 71}`;
     textStyle = "text-red-800";
   } else {
     par = "even";
