@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mst-frontend/static/css/main.9097ffaf.css",
-    "main.js": "/mst-frontend/static/js/main.b1231e4e.js",
+    "main.css": "/mst-frontend/static/css/main.065fd40a.css",
+    "main.js": "/mst-frontend/static/js/main.3f9cad1b.js",
     "static/js/787.a17b82d6.chunk.js": "/mst-frontend/static/js/787.a17b82d6.chunk.js",
     "static/media/banner.jpg": "/mst-frontend/static/media/banner.457a43293207c6c861f7.jpg",
     "index.html": "/mst-frontend/index.html",
-    "main.9097ffaf.css.map": "/mst-frontend/static/css/main.9097ffaf.css.map",
-    "main.b1231e4e.js.map": "/mst-frontend/static/js/main.b1231e4e.js.map",
+    "main.065fd40a.css.map": "/mst-frontend/static/css/main.065fd40a.css.map",
+    "main.3f9cad1b.js.map": "/mst-frontend/static/js/main.3f9cad1b.js.map",
     "787.a17b82d6.chunk.js.map": "/mst-frontend/static/js/787.a17b82d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9097ffaf.css",
-    "static/js/main.b1231e4e.js"
+    "static/css/main.065fd40a.css",
+    "static/js/main.3f9cad1b.js"
   ]
 }
