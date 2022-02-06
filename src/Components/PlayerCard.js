@@ -15,7 +15,7 @@ const PlayerCard = ({ player, index }) => {
     par = `- ${player.TotalStrokes - 71}`;
     textStyle = "text-red-800";
   } else {
-    par = 0;
+    par = "even";
     textStyle = "text-gray-800";
   }
 
