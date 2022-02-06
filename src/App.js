@@ -24,9 +24,6 @@ function App() {
 
   return (
     <div className="bg-green-400 ">
-      <h1 className="text-gray-800 text-center text-3xl font-bold p-4">
-        Live Golf Tournoment
-      </h1>
       <img src={banner} alt="golf image" className="w-full" />
       {loader ? <Loader /> : <TableCard player={player} />}
     </div>
