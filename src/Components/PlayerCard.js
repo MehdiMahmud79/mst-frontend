@@ -6,7 +6,7 @@ const PlayerCard = ({ player, index }) => {
   let textStyle = "text-gray-900";
   let rowStyle = "px-5 py-5 border-b border-gray-200 bg-gray-200 text-sm";
   if (index == 0)
-    rowStyle = "px-5 py-5 border-b border-gray-200 bg-blue-300 text-sm";
+    rowStyle = "px-5 py-5 border-b border-gray-200 bg-blue-200 text-sm";
   let pStyle = "text-gray-900 whitespace-no-wrap text-center";
   let par = player.TotalStrokes - 71;
   if (par > 0) {
