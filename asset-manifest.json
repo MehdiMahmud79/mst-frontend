@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/mst-frontend/static/css/main.27664a1a.css",
-    "main.js": "/mst-frontend/static/js/main.49398542.js",
+    "main.js": "/mst-frontend/static/js/main.a980dec7.js",
     "static/js/787.a17b82d6.chunk.js": "/mst-frontend/static/js/787.a17b82d6.chunk.js",
-    "static/media/banner.jpg": "/mst-frontend/static/media/banner.4f1758932f25cf6780e4.jpg",
+    "static/media/banner.jpg": "/mst-frontend/static/media/banner.457a43293207c6c861f7.jpg",
     "index.html": "/mst-frontend/index.html",
     "main.27664a1a.css.map": "/mst-frontend/static/css/main.27664a1a.css.map",
-    "main.49398542.js.map": "/mst-frontend/static/js/main.49398542.js.map",
+    "main.a980dec7.js.map": "/mst-frontend/static/js/main.a980dec7.js.map",
     "787.a17b82d6.chunk.js.map": "/mst-frontend/static/js/787.a17b82d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.27664a1a.css",
-    "static/js/main.49398542.js"
+    "static/js/main.a980dec7.js"
   ]
 }
