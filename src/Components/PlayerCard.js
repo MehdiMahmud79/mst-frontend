@@ -8,7 +8,7 @@ const PlayerCard = ({ player, index }) => {
   if (index == 0)
     rowStyle = "px-5 py-5 border-b border-gray-200 bg-green-400 text-sm";
   let pStyle = "text-gray-900 whitespace-no-wrap text-center";
-  let par = 71 - player.TotalStrokes;
+  let par = player.TotalStrokes - 71;
   if (par > 0) {
     par = `+ ${par}`;
   } else if (par < 0) {
@@ -69,6 +69,6 @@ const PlayerCard = ({ player, index }) => {
       </td>
     </tr>
   );
-};
+};;
 
 export default PlayerCard;
